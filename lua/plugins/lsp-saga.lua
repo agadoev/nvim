@@ -5,7 +5,6 @@ saga.init_lsp_saga({})
 
 
 
-
 -- Lsp finder find the symbol definition implement reference
 -- if there is no implement it will hide
 -- when you use action in finder like open vsplit then you can
@@ -41,9 +40,6 @@ end, { silent = true })
 keymap("n", "]E", function()
   require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
 end, { silent = true })
-
--- Outline
-keymap("n","<leader>o", "<cmd>LSoutlineToggle<CR>",{ silent = true })
 
 -- Hover Doc
 keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })

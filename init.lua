@@ -24,10 +24,10 @@ require('plugins/bufferline')
 require('plugins/lsp-saga')
 require('plugins/nvim-commenter')
 require('plugins/lspconfig')
-require('nightfox').setup{}
+require('plugins/nightfox')
 
 set.termguicolors = true
-vim.cmd("colorscheme nightfox")
+-- vim.cmd("colorscheme nightfox")
 
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
@@ -51,7 +51,7 @@ return require('packer').startup(function(use)
   -- Colorscheme
   use "EdenEast/nightfox.nvim"
 
-  -- Telecope
+  -- Telescope
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     requires = { {'nvim-lua/plenary.nvim'} }

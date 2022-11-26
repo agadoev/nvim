@@ -32,5 +32,4 @@ require'lspconfig'.volar.setup{
   filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
 }
 
-require("lspconfig").omnisharp.setup {}
-
+require'lspconfig'.csharp_ls.setup{}
