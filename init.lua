@@ -1,5 +1,4 @@
 local set = vim.opt
-
 -- tabs settings
 set.tabstop = 2
 set.softtabstop = 2
@@ -25,6 +24,8 @@ require('plugins/lsp-saga')
 require('plugins/nvim-commenter')
 require('plugins/lspconfig')
 require('plugins/nightfox')
+require('plugins/gitsigns')
+require('plugins/autopairs')
 
 set.termguicolors = true
 -- vim.cmd("colorscheme nightfox")
@@ -69,6 +70,14 @@ return require('packer').startup(function(use)
     }
   }
 
+  -- Autopairs
+  use "windwp/nvim-autopairs"
+  
+  -- Gitsigns
+  use {
+    'lewis6991/gitsigns.nvim',
+    -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
+  }
   -- Nvim LSP Config
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
 
