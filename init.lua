@@ -20,6 +20,8 @@ vim.g.maplocalleader = ' '
 require('plugins/nvim-tree')
 require('plugins/toggleterm')
 require('plugins/telescope')
+require('plugins/bufferline')
+require('plugins/lsp-saga')
 require('plugins/nvim-commenter')
 require('plugins/lspconfig')
 require('nightfox').setup{}
@@ -36,6 +38,12 @@ return require('packer').startup(function(use)
 
   -- Bufferline
   use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+
+  -- Lsp Saga
+  use({
+      "glepnir/lspsaga.nvim",
+      branch = "main",
+  })
 
   -- Commenter
   use "terrortylor/nvim-comment"
