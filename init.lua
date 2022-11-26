@@ -25,7 +25,7 @@ require('plugins/lspconfig')
 require('nightfox').setup{}
 
 set.termguicolors = true
-vim.cmd("colorscheme nordfox")
+vim.cmd("colorscheme nightfox")
 
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
@@ -33,6 +33,9 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
+
+  -- Bufferline
+  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 
   -- Commenter
   use "terrortylor/nvim-comment"
