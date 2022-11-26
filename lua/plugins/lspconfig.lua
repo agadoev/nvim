@@ -25,11 +25,21 @@ local on_attach = function(client, bufnr)
 end
 
 require'lspconfig'.tsserver.setup{
-  on_attach = on_attach
+  on_attach = on_attach,
+  -- filetypes = { 'typescript', 'typescriptreact', 'vue', 'json' } 
 }
 
 require'lspconfig'.volar.setup{
   filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
+}
+
+--Enable (broadcasting) snippet capability for completion
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+require'lspconfig'.html.setup {
+  capabilities = capabilities,
+  filetypes = { 'html', 'vue' }
 }
 
 require'lspconfig'.csharp_ls.setup{}

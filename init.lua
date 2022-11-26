@@ -26,6 +26,7 @@ require('plugins/lspconfig')
 require('plugins/nightfox')
 require('plugins/gitsigns')
 require('plugins/autopairs')
+require('plugins/cmp')
 
 set.termguicolors = true
 -- vim.cmd("colorscheme nightfox")
@@ -69,6 +70,34 @@ return require('packer').startup(function(use)
       'nvim-tree/nvim-web-devicons', -- optional, for file icons
     }
   }
+
+  -- -- Autoclose tags
+  -- ["windwp/nvim-ts-autotag"] = { after = "nvim-treesitter" },
+
+  -- -- Snippet collection
+  -- ["rafamadriz/friendly-snippets"] = { opt = true },
+
+  -- Snippet engine
+  use "L3MON4D3/LuaSnip"
+
+  -- Completion engine
+  use "hrsh7th/nvim-cmp"
+
+  -- Buffer completion source
+  use "hrsh7th/cmp-buffer"
+
+  -- Path completion source
+  use "hrsh7th/cmp-path"
+
+  -- LSP completion source
+  use "hrsh7th/cmp-nvim-lsp"
+
+  -- -- Snippet completion source
+  -- ["saadparwaiz1/cmp_luasnip"] = {
+  --   after = "nvim-cmp",
+  --   config = function() astronvim.add_user_cmp_source "luasnip" end,
+  -- },
+
 
   -- Autopairs
   use "windwp/nvim-autopairs"
