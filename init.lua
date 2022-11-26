@@ -17,8 +17,10 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- import all plugins
-require('lua/plugins/nvim-tree')
+require('plugins/nvim-tree')
 require('plugins/toggleterm')
+require('plugins/telescope')
+require('plugins/nvim-commenter')
 require('plugins/lspconfig')
 require('nightfox').setup{}
 
@@ -32,15 +34,23 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  -- Commenter
+  use "terrortylor/nvim-comment"
+
   -- Colorscheme
   use "EdenEast/nightfox.nvim"
 
+  -- Telecope
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
   -- Toggleterm
   use {"akinsho/toggleterm.nvim", tag = '*', config = function()
     require("toggleterm") end
   }
 
-  -- Nvim Tre
+  -- Nvim Tree
   use {
     'nvim-tree/nvim-tree.lua',
     requires = {
