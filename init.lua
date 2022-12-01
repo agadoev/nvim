@@ -9,6 +9,9 @@ set.smarttab = true
 set.ignorecase = true
 
 set.relativenumber = true
+set.number = true -- for current line number
+
+set.binary = true -- do not add empty line at the end of the file
 
 -- set leader key
 -- to show cuurent leader :let mapleader
@@ -29,7 +32,7 @@ require('plugins/autopairs')
 require('plugins/cmp')
 
 set.termguicolors = true
--- vim.cmd("colorscheme nightfox")
+vim.cmd("colorscheme dayfox")
 
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
