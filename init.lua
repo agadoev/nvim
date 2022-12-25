@@ -28,6 +28,7 @@ require('plugins/nvim-commenter')
 require('plugins/lspconfig')
 require('plugins/nightfox')
 require('plugins/autopairs')
+require('plugins/treesitter')
 
 set.termguicolors = true
 vim.cmd("colorscheme nordfox")
@@ -54,6 +55,8 @@ return require('packer').startup(function(use)
   use "akinsho/toggleterm.nvim"
 
   use 'nvim-tree/nvim-tree.lua'
+
+  use 'nvim-treesitter/nvim-treesitter'
 
   use "windwp/nvim-autopairs"
 
