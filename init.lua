@@ -20,6 +20,8 @@ vim.cmd("set noeol")
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+vim.api.nvim_set_keymap("", "<leader>h", ":noh<Cr>", { silent = true })
+
 -- import all plugins
 require('plugins/nvim-tree')
 require('plugins/toggleterm')
@@ -51,6 +53,8 @@ return require('packer').startup(function(use)
 	use 'nvim-lua/plenary.nvim'
 
   use 'nvim-telescope/telescope.nvim'
+
+  use 'nvim-tree/nvim-web-devicons'
 
   use "akinsho/toggleterm.nvim"
 
